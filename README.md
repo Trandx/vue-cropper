@@ -22,7 +22,7 @@ Vue-Cropper is a lightweight (100 Kbytes gzip), zero-dependency sorting library 
 
 ## Demo
 
-Checkout **[Here](https://vue-cropper-example-p1l49qy3g-trandxs-projects.vercel.app/)**
+Checkout **[Here](https://vue-cropper-example.vercel.app/)**
 
 ## Capture
 
