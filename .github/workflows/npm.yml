@@ -1,30 +1,31 @@
 name: Release
 
 on:
-  pull_request:
-    types: [closed]
+  # This triggers the release only after a PR is merged into the main branch
+  push:
+    branches:
+      - main
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true  # Only run if the PR is merged
     permissions:
-      contents: write  # to be able to publish a GitHub release
-      issues: write  # to be able to comment on released issues
-      pull-requests: write  # to be able to comment on released pull requests
-      id-token: write  # to enable use of OIDC for npm provenance
+      contents: write  # to publish a GitHub release
+      issues: write  # to comment on released issues
+      pull-requests: write  # to comment on released pull requests
+      id-token: write  # for OIDC authentication
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetch all commit history so semantic-release can work properly
+          fetch-depth: 0  # Fetch all commit history for semantic-release
 
       - name: Setup Node.js and pnpm
-        uses: pnpm/action-setup@v2  # Using pnpm action for setup
+        uses: pnpm/action-setup@v2
         with:
-          version: 8  # Ensure you're using pnpm version 8 or above
+          version: 8
 
       - name: Install Node.js (>=20.8.1)
         uses: actions/setup-node@v3
@@ -32,12 +33,12 @@ jobs:
           node-version: '20.8.1'
 
       - name: Install dependencies
-        run: pnpm install  # Use pnpm to install dependencies, locked version
+        run: pnpm install
 
       - name: Build the project
         run: pnpm run build
 
-      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+      - name: Verify provenance and audit signatures
         run: pnpm audit signatures
 
       - name: Release
