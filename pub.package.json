@@ -18,7 +18,8 @@
         "cropper",
         "cropperjs",
         "component",
-        "crop image"
+        "crop image",
+        "vue cropper"
     ],
     "publishConfig": {
         "access": "public",
