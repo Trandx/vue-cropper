@@ -1,6 +1,6 @@
 # Vue-Cropper
 
-Vue-Cropper is a lightweight (100 Kbytes gzip), zero-dependency sorting library with TypeScript support. this package is based on [cropperjs](https://github.com/fengyuanchen/cropperjs).
+Vue-Cropper is a lightweight (100 Kbytes gzip), zero-dependency sorting library with TypeScript support. This package is based on [cropperjs](https://github.com/fengyuanchen/cropperjs).
 
 [![NPM](https://nodei.co/npm/@trandx/vue-cropper.png?downloads=true)](https://nodei.co/npm/@trandx/vue-cropper/)
 
@@ -35,6 +35,7 @@ Checkout **[Here](https://vue-cropper-example-p1l49qy3g-trandxs-projects.vercel.
 - Support for various image formats.
 - Customizable aspect ratios and crop dimensions.
 - Preview functionality.
+- lord image since an url and crop it.
 
 ## Installation
 
