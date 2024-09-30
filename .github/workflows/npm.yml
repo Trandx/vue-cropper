@@ -1,40 +1,42 @@
 name: Release
 
 on:
-  push:
-    branches: [main]
+  pull_request:
+    types: [closed]
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true  # Only run if the PR is merged
     permissions:
-      contents: write # to be able to publish a GitHub release
-      issues: write # to be able to comment on released issues
-      pull-requests: write # to be able to comment on released pull requests
-      id-token: write # to enable use of OIDC for npm provenance
+      contents: write  # to be able to publish a GitHub release
+      issues: write  # to be able to comment on released issues
+      pull-requests: write  # to be able to comment on released pull requests
+      id-token: write  # to enable use of OIDC for npm provenance
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Fetch all commit history so semantic-release can work properly
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js and pnpm
+        uses: pnpm/action-setup@v2  # Using pnpm action for setup
         with:
-          node-version: "lts/*"
+          version: 8  # Ensure you're using pnpm version 8 or above
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile  # Use pnpm to install dependencies, locked version
 
-      - name: build
-        run: npm run build
+      - name: Build the project
+        run: pnpm run build
 
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
-        run: npm audit signatures
+        run: pnpm audit signatures
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: pnpm dlx semantic-release
