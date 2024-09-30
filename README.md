@@ -132,7 +132,7 @@ pnpm add @trandx/vue-cropper
   }
 </script>
 ```
-for more example details go on **[this repos](https://github.com/Trandx/vue-cropper/example)**
+for more example details go on **[this repos](https://github.com/Trandx/vue-cropper/tree/develop/example/src)**
 
 ## Props
 
