@@ -26,6 +26,11 @@ jobs:
         with:
           version: 8  # Ensure you're using pnpm version 8 or above
 
+        - name: Install Node.js (>=20.8.1)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.8.1'
+
       - name: Install dependencies
         run: pnpm install  # Use pnpm to install dependencies, locked version
 
