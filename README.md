@@ -87,7 +87,6 @@ pnpm add @trandx/vue-cropper
 
   type ScaleType =  1 | -1
   type VueCropperType = InstanceType<typeof VueCropper>
-  const cropper = ref<VueCropperType>()
 
   const cropper = ref<VueCropperType>()
   const cropImg = ref<string>()
@@ -163,12 +162,12 @@ for more example details go on **[this repos](https://github.com/Trandx/vue-crop
 |--------------------|-----------------------------------------------------|-------------------------------|------------------------------------------------|
 | `reset`            | None                                                | void                          | Resets the cropper instance.                   |
 | `clear`            | None                                                | void                          | Clears the crop box.                           |
-| `replace`          | `url: string`, `onlyColorChanged: boolean = false`| this                          | Replaces the image's src and rebuilds the cropper. |
+| `replace`          | `url: string`, `onlyColorChanged: boolean = false`  | this                          | Replaces the image's src and rebuilds the cropper. |
 | `enable`           | None                                                | void                          | Enables the cropper.                           |
 | `disable`          | None                                                | void                          | Disables the cropper.                          |
 | `destroy`          | None                                                | void                          | Destroys the cropper instance.                 |
-| `move`             | `offsetX: number`, `offsetY: number`              | `Cropper`                    | Moves the canvas with offsets.                 |
-| `moveTo`           | `x: number`, `y: number = x`                       | void                          | Moves canvas to a specific point.              |
+| `move`             | `offsetX: number`, `offsetY: number`                | `Cropper`                    | Moves the canvas with offsets.                 |
+| `moveTo`           | `x: number`, `y: number = x`                        | void                          | Moves canvas to a specific point.              |
 | `zoom`             | `ratio: number`                                    | void                          | Zooms the canvas relatively.                   |
 | `zoomTo`           | `ratio: number`                                    | void                          | Zooms to an absolute ratio.                    |
 | `rotate`           | `degree: number`                                  | void                          | Rotates the canvas relatively.                 |
@@ -181,10 +180,10 @@ for more example details go on **[this repos](https://github.com/Trandx/vue-crop
 | `getContainerData` | None                                                | Container data               | Gets container size data.                      |
 | `getImageData`     | None                                                | Image data                   | Gets image position and size data.             |
 | `getCanvasData`    | None                                                | Canvas data                  | Gets canvas position and size data.            |
-| `setCanvasData`    | `data: Cropper.SetCanvasDataOptions`              | this                          | Sets canvas position and size.                 |
+| `setCanvasData`    | `data: Cropper.SetCanvasDataOptions`                 | this                          | Sets canvas position and size.                 |
 | `getCropBoxData`   | None                                                | Crop box data                | Gets crop box position and size data.         |
-| `setCropBoxData`   | `data: Cropper.SetCropBoxDataOptions`             | this                          | Sets crop box data.                            |
-| `getCroppedCanvas` | `options: Cropper.GetCroppedCanvasOptions | undefined` | Result canvas               | Gets a canvas with the cropped image.         |
+| `setCropBoxData`   | `data: Cropper.SetCropBoxDataOptions`                | this                          | Sets crop box data.                            |
+| `getCroppedCanvas` | `options: Cropper.GetCroppedCanvasOptions`         | Result canvas               | Gets a canvas with the cropped image.         |
 | `setAspectRatio`   | `aspectRatio: number`                              | this                          | Changes the crop box aspect ratio.             |
 | `setDragMode`      | `mode: Cropper.DragMode`                          | this                          | Changes the drag mode.                         |
 
