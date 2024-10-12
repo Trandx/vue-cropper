@@ -112,14 +112,14 @@ pnpm add @trandx/vue-cropper
   const move = (x: number, y: number) => cropper.value?.move(x, y)
   const rotate = (deg: number) => cropper.value?.rotate(deg)
   const flipX = () => {
-    let scale = -(cropper.value?.getAttribute('data-scale') || 1);
+    let scale = -(cropper.value?.getAttribute('data-scale-x') || 1);
     cropper.value?.scaleX(scale)
-    cropper.value?.setAttribute('data-scale', scale);
+    cropper.value?.setAttribute('data-scale-x', scale);
   }
   const flipY = () => {
-    let scale = -(cropper.value?.getAttribute('data-scale') || 1);
+    let scale = -(cropper.value?.getAttribute('data-scale-y') || 1);
     cropper.value?.scaleX(scale)
-    cropper.value?.setAttribute('data-scale', scale);
+    cropper.value?.setAttribute('data-scale-y', scale);
   }
   const reset = () => cropper.value?.reset()
   const zoom = (percent: number) => cropper.value?.zoom(percent)
