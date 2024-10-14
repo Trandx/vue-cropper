@@ -67,6 +67,8 @@ pnpm add @trandx/vue-cropper
       ref="cropper"
       :src="imgSrc"
       alt="Source Image"
+      :aspectRatio="4 / 3"
+      :cropBoxResizable="true"
       @ready="..."
       @cropstart="..."
       @cropmove="..."
@@ -141,6 +143,7 @@ for more example details go on **[this repos](https://github.com/Trandx/vue-crop
 | `alt`              | `string`    | -        | Alternative text for the image (optional).         |
 | `imgStyle`         | `StyleValue`| -        | Custom styles for the image element (optional).    |
 | `cropBoxResizable`  | `boolean`  | `true`   | Enables or disables resizing of the crop box.      |
+| `aspectRatio`      | `number`    | -        | Representing the width-to-height ratio of the cropping box.     |
 | `canvasWidth`      | `number`    | -        | The width of the canvas for the cropped image.     |
 | `canvasHeight`     | `number`    | -        | The height of the canvas for the cropped image.    |
 | `cropBoxWidth`     | `number`    | -        | The width of the crop box in pixels.               |

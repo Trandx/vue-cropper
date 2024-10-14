@@ -15,10 +15,11 @@ import Cropper from '@/libs/cropperjs';
 import '@/libs/cropperjs/index.css'; // Import the CSS for Cropper.js
 
 type PropsType = {
-  src: string
-  alt?: string
-  imgStyle?: StyleValue
-  cropBoxResizable?: boolean
+  src: string,
+  alt?: string,
+  imgStyle?: StyleValue,
+  cropBoxResizable?: boolean,
+  aspectRatio?: number,
   canvasWidth?: number,
   canvasHeight?: number,
   cropBoxWidth?: number,
@@ -90,7 +91,7 @@ const build = (params: PropsType) => {
     responsive: false,
     //modal: false,
     background: true,
-    //aspectRatio: props.aspectRatio || 1, // For square cropping
+    aspectRatio: props.aspectRatio, // For square cropping
     viewMode: 0,
     cropstart() {
       //emit('cropstart',  cropperInstance.value?.getData())
@@ -320,9 +321,8 @@ defineExpose({
   setDragMode,
 })
 
-watch(()=> props, (newValue) => {
+watch(props, (newValue) => {
   build(newValue)
-  
 })
 
 // Clean up the cropper when the component is destroyed
