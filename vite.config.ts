@@ -1,12 +1,13 @@
 import { defineConfig, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath } from "url";
+import tailwindcss from '@tailwindcss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   const basePath = fileURLToPath(new URL("./src", import.meta.url));
   const config: UserConfig = {
-    plugins: [vue()],
+    plugins: [vue(), tailwindcss()],
     resolve: {
       alias: {
         //"@": resolve(__dirname, "src"),
@@ -28,6 +29,7 @@ export default defineConfig(() => {
       rollupOptions: {
         external: ['vue'], // Externalize Vue dependency
         output: {
+          
           globals: {
             vue: 'Vue',
           },

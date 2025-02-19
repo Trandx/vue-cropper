@@ -5,14 +5,14 @@
   "type": "module",
   "module": "dist/lib/index.js",
   "types": "dist/types/index.d.ts",
-  "style": "dist/lib/style.css",
+  "style": "dist/lib/index.css",
   "exports": {
     ".": {
       "import": "./dist/lib/index.js",
       "types": "./dist/types/index.d.ts"
     },
     "./css": {
-      "import": "./dist/lib/style.css"
+      "import": "./dist/lib/index.css"
     }
   },
   "scripts": {
@@ -44,20 +44,21 @@
     "registry": "https://registry.npmjs.com"
   },
   "dependencies": {
-    "vue": "catalog:"
+    "@tailwindcss/vite": "^4.0.7",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@types/node": "catalog:",
-    "@vitejs/plugin-vue": "catalog:",
-    "autoprefixer": "catalog:",
-    "tailwindcss": "catalog:",
-    "typescript": "catalog:",
-    "vite": "catalog:",
-    "vue-tsc": "catalog:",
-    "@semantic-release/changelog": "catalog:",
-    "@semantic-release/commit-analyzer": "catalog:",
-    "@semantic-release/release-notes-generator": "catalog:",
-    "@semantic-release/npm": "catalog:",
-    "@semantic-release/github": "catalog:"
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@types/node": "^22.13.4",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "autoprefixer": "^10.4.20",
+    "tailwindcss": "^4.0.7",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1",
+    "vue-tsc": "^2.2.2"
   }
 }

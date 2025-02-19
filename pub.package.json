@@ -5,13 +5,18 @@
     "type": "module",
     "description": "A vuejs component image cropper.",
     "main": "lib/index.js",
-    "module": "lib/index.js",
-    "types": "types/index.d.ts",
-    "style": "lib/style.css",
-    "files": [
-        "lib",
-        "types"
-    ],
+    "module": "dist/lib/index.js",
+    "types": "dist/types/index.d.ts",
+    "style": "dist/lib/index.css",
+    "exports": {
+        ".": {
+        "import": "./dist/lib/index.js",
+        "types": "./dist/types/index.d.ts"
+        },
+        "./css": {
+        "import": "./dist/lib/index.css"
+        }
+    },
     "keywords": [
         "vue",
         "vuejs",
