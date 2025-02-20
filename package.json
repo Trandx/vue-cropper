@@ -11,9 +11,7 @@
       "import": "./dist/lib/index.js",
       "types": "./dist/types/index.d.ts"
     },
-    "./css": {
-      "import": "./dist/lib/index.css"
-    }
+    "./style.css": "./dist/lib/index.css"
   },
   "scripts": {
     "dev": "vite",

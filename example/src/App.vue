@@ -10,7 +10,7 @@
     </div>
     <div class=" flex justify-center items-center space-x-48">
       <div class="space-y-2 w-1/3" >
-        <div class=" h-[350px] bg-primary-400 rounded-lg border-2 border-gray-800">
+        <div class=" h-[350px] bg-primary-500 rounded-lg border-2 border-gray-800">
           <VueCropper
           @ready=""
           @preview="preview"

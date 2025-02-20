@@ -62,7 +62,7 @@ pnpm add @trandx/vue-cropper
 
 ```vue
 <template>
-  <div class=" h-[350px] bg-primary-400 rounded-lg border-2 border-gray-800">
+  <div class=" h-[350px] bg-primary-500 rounded-lg border-2 border-gray-800">
     <Cropper
       ref="cropper"
       :src="imgSrc"
