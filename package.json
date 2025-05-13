@@ -42,21 +42,21 @@
     "registry": "https://registry.npmjs.com"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.2",
+    "@tailwindcss/vite": "^4.1.6",
     "vue": "^3.5.13"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
-    "@semantic-release/github": "^11.0.1",
+    "@semantic-release/github": "^11.0.2",
     "@semantic-release/npm": "^12.0.1",
     "@semantic-release/release-notes-generator": "^14.0.3",
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-vue": "^5.2.3",
+    "@types/node": "^22.15.17",
+    "@vitejs/plugin-vue": "^5.2.4",
     "autoprefixer": "^10.4.21",
-    "tailwindcss": "^4.1.2",
-    "typescript": "^5.8.2",
-    "vite": "^6.2.5",
-    "vue-tsc": "^2.2.8"
+    "tailwindcss": "^4.1.6",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vue-tsc": "^2.2.10"
   }
 }
